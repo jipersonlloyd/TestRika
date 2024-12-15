@@ -1,0 +1,65 @@
+﻿@model IEnumerable<RikaDatas.Models.RikaSales>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.fcompanyid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ftermid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fsiteid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fsale_date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fproductid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.total_qty)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.fcompanyid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ftermid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fsiteid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fsale_date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fproductid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.total_qty)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
