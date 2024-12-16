@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Lloyd Jiperson Diaz\\Source\\Repos\\RikaDatas\\RikaDatas\\RikaDatas.csproj": {}
+    "C:\\Users\\Owner\\source\\repos\\TestRika\\RikaDatas\\RikaDatas.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Lloyd Jiperson Diaz\\Source\\Repos\\RikaDatas\\RikaDatas\\RikaDatas.csproj": {
+    "C:\\Users\\Owner\\source\\repos\\TestRika\\RikaDatas\\RikaDatas.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lloyd Jiperson Diaz\\Source\\Repos\\RikaDatas\\RikaDatas\\RikaDatas.csproj",
+        "projectUniqueName": "C:\\Users\\Owner\\source\\repos\\TestRika\\RikaDatas\\RikaDatas.csproj",
         "projectName": "RikaDatas",
-        "projectPath": "C:\\Users\\Lloyd Jiperson Diaz\\Source\\Repos\\RikaDatas\\RikaDatas\\RikaDatas.csproj",
-        "packagesPath": "C:\\Users\\Lloyd Jiperson Diaz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lloyd Jiperson Diaz\\Source\\Repos\\RikaDatas\\RikaDatas\\obj\\",
+        "projectPath": "C:\\Users\\Owner\\source\\repos\\TestRika\\RikaDatas\\RikaDatas.csproj",
+        "packagesPath": "C:\\Users\\Owner\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Owner\\source\\repos\\TestRika\\RikaDatas\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Lloyd Jiperson Diaz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Owner\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,7 +26,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -39,8 +42,9 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "direct"
-        }
+          "auditMode": "all"
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -48,7 +52,7 @@
           "dependencies": {
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[8.0.7, )"
+              "version": "[9.0.0, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",
@@ -74,7 +78,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200-preview.0.24575.35/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

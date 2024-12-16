@@ -1,22 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Lloyd Jiperson Diaz\\Source\\Repos\\RikaDatas\\",
+  "WorkspaceRootPath": "C:\\Users\\Owner\\source\\repos\\TestRika\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{58E837F6-C520-49A5-8E8A-4C4760FF1A38}|RikaDatas\\RikaDatas.csproj|c:\\users\\lloyd jiperson diaz\\source\\repos\\rikadatas\\rikadatas\\controllers\\rikasalescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{58E837F6-C520-49A5-8E8A-4C4760FF1A38}|RikaDatas\\RikaDatas.csproj|c:\\users\\owner\\source\\repos\\testrika\\rikadatas\\controllers\\rikasalescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{58E837F6-C520-49A5-8E8A-4C4760FF1A38}|RikaDatas\\RikaDatas.csproj|solutionrelative:rikadatas\\controllers\\rikasalescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{58E837F6-C520-49A5-8E8A-4C4760FF1A38}|RikaDatas\\RikaDatas.csproj|c:\\users\\lloyd jiperson diaz\\source\\repos\\rikadatas\\rikadatas\\views\\rikasales\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{58E837F6-C520-49A5-8E8A-4C4760FF1A38}|RikaDatas\\RikaDatas.csproj|solutionrelative:rikadatas\\views\\rikasales\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58E837F6-C520-49A5-8E8A-4C4760FF1A38}|RikaDatas\\RikaDatas.csproj|c:\\users\\lloyd jiperson diaz\\source\\repos\\rikadatas\\rikadatas\\models\\rikasales.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{58E837F6-C520-49A5-8E8A-4C4760FF1A38}|RikaDatas\\RikaDatas.csproj|c:\\users\\owner\\source\\repos\\testrika\\rikadatas\\models\\rikasales.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{58E837F6-C520-49A5-8E8A-4C4760FF1A38}|RikaDatas\\RikaDatas.csproj|solutionrelative:rikadatas\\models\\rikasales.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58E837F6-C520-49A5-8E8A-4C4760FF1A38}|RikaDatas\\RikaDatas.csproj|c:\\users\\lloyd jiperson diaz\\source\\repos\\rikadatas\\rikadatas\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{58E837F6-C520-49A5-8E8A-4C4760FF1A38}|RikaDatas\\RikaDatas.csproj|solutionrelative:rikadatas\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,43 +18,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\Lloyd Jiperson Diaz\\Source\\Repos\\RikaDatas\\RikaDatas\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "RikaDatas\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\Lloyd Jiperson Diaz\\Source\\Repos\\RikaDatas\\RikaDatas\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "RikaDatas\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAABSAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-15T00:11:05.172Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Lloyd Jiperson Diaz\\Source\\Repos\\RikaDatas\\RikaDatas\\Views\\RikaSales\\Index.cshtml",
-              "RelativeDocumentMoniker": "RikaDatas\\Views\\RikaSales\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Lloyd Jiperson Diaz\\Source\\Repos\\RikaDatas\\RikaDatas\\Views\\RikaSales\\Index.cshtml",
-              "RelativeToolTip": "RikaDatas\\Views\\RikaSales\\Index.cshtml",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAqwCQAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-15T00:08:38.447Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "RikaSales.cs",
-              "DocumentMoniker": "C:\\Users\\Lloyd Jiperson Diaz\\Source\\Repos\\RikaDatas\\RikaDatas\\Models\\RikaSales.cs",
+              "DocumentMoniker": "C:\\Users\\Owner\\source\\repos\\TestRika\\RikaDatas\\Models\\RikaSales.cs",
               "RelativeDocumentMoniker": "RikaDatas\\Models\\RikaSales.cs",
-              "ToolTip": "C:\\Users\\Lloyd Jiperson Diaz\\Source\\Repos\\RikaDatas\\RikaDatas\\Models\\RikaSales.cs",
+              "ToolTip": "C:\\Users\\Owner\\source\\repos\\TestRika\\RikaDatas\\Models\\RikaSales.cs",
               "RelativeToolTip": "RikaDatas\\Models\\RikaSales.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-15T00:06:39.806Z",
               "EditorCaption": ""
@@ -71,11 +37,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "RikaSalesController.cs",
-              "DocumentMoniker": "C:\\Users\\Lloyd Jiperson Diaz\\Source\\Repos\\RikaDatas\\RikaDatas\\Controllers\\RikaSalesController.cs",
+              "DocumentMoniker": "C:\\Users\\Owner\\source\\repos\\TestRika\\RikaDatas\\Controllers\\RikaSalesController.cs",
               "RelativeDocumentMoniker": "RikaDatas\\Controllers\\RikaSalesController.cs",
-              "ToolTip": "C:\\Users\\Lloyd Jiperson Diaz\\Source\\Repos\\RikaDatas\\RikaDatas\\Controllers\\RikaSalesController.cs",
-              "RelativeToolTip": "RikaDatas\\Controllers\\RikaSalesController.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAxwBoAAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Owner\\source\\repos\\TestRika\\RikaDatas\\Controllers\\RikaSalesController.cs*",
+              "RelativeToolTip": "RikaDatas\\Controllers\\RikaSalesController.cs*",
+              "ViewState": "AgIAACwAAAAAAAAAAAAAACwAAABPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-15T00:02:13.414Z",
               "EditorCaption": ""

@@ -15,17 +15,17 @@ namespace RikaDatas.Controllers
             List<RikaSales> newSales = new List<RikaSales>();
             sales = Sales();
             inventories = Inventories();
-            
+
             for (int i = 0; i < inventories.Count; i++) 
             {
                 for (int j = 0; j < sales.Count; j++) 
                 {
-                    if (newSales.Contains(sales[j])) 
+                    /* if (newSales.Contains(sales[j])) 
                     {
                         continue;
-                    }
+                    } */
 
-                    if (sales[j].fproductid == inventories[i].fproductid && sales[j].fsale_date == inventories[i].ftrxdate && (sales[j].total_qty != inventories[i].fsold_qty || sales[j].total_qty < inventories[i].fsold_qty))
+                    if (sales[j].fproductid == inventories[i].fproductid && sales[j].fsale_date == inventories[i].ftrxdate && sales[j].total_qty != inventories[i].fsold_qty)
                     {
                         newSales.Add(sales[j]);
                     }
@@ -34,7 +34,7 @@ namespace RikaDatas.Controllers
                         continue;
                     }
                 }
-            }
+            } 
 
             return View(newSales);
         }
@@ -42,7 +42,7 @@ namespace RikaDatas.Controllers
         public List<RikaInventory> Inventories()
         {
             List<RikaInventory> inventories = new List<RikaInventory>();
-            string filePath = "C:\\Users\\Lloyd Jiperson Diaz\\Downloads\\rikaproductinv09to1018.json";
+            string filePath = "C:\\Users\\Owner\\Documents\\rikainvosmena01to10.json";
             string jsonContent = System.IO.File.ReadAllText(filePath);
             JArray array = JArray.Parse(jsonContent);
 
@@ -68,7 +68,7 @@ namespace RikaDatas.Controllers
         public List<RikaSales> Sales()
         {
             List<RikaSales> sales = new List<RikaSales>();
-            string filePath = "C:\\Users\\Lloyd Jiperson Diaz\\Downloads\\rikaproduct09to1018.json";
+            string filePath = "C:\\Users\\Owner\\Documents\\rikasalesosmena01to10.json";
             string jsonContent = System.IO.File.ReadAllText(filePath);
             JArray array = JArray.Parse(jsonContent);
 
