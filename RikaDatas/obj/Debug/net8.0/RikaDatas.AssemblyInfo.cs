@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RikaDatas")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+25b76323a642719b4f21dedd66944c78b8de306f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+93a09bc8556ed28459f652b5ee4b102a2c16821c")]
 [assembly: System.Reflection.AssemblyProductAttribute("RikaDatas")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RikaDatas")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
