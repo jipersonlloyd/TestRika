@@ -1,4 +1,4 @@
-﻿@model IEnumerable<RikaDatas.Models.RikaSales>
+﻿@model RikaDatas.Models.PagedList
 
 @{
     ViewData["Title"] = "Index";
@@ -13,28 +13,28 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.fcompanyid)
+                fcompanyid
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ftermid)
+                ftermid
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.fsiteid)
+                fsiteid
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.fsale_date)
+                fsale_date
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.fproductid)
+                fproductid
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.total_qty)
+                total_qty
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+@foreach (var item in Model.Items) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.fcompanyid)
@@ -63,3 +63,17 @@
 }
     </tbody>
 </table>
+
+<div style="margin-top: 20px;">
+    @if (Model.HasPreviousPage)
+    {
+        <a href="@Url.Action("Index", new { page = Model.PageIndex - 1 })" class="btn btn-primary">Previous</a>
+    }
+
+    <span>Page @Model.PageIndex of @Model.TotalPages</span>
+
+    @if (Model.HasNextPage)
+    {
+        <a href="@Url.Action("Index", new { page = Model.PageIndex + 1 })" class="btn btn-primary">Next</a>
+    }
+</div>

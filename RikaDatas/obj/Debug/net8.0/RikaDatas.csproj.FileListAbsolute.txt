@@ -225,6 +225,15 @@ C:\Users\Lloyd Jiperson Diaz\Source\Repos\RikaDatas\RikaDatas\bin\Debug\net8.0\r
 C:\Users\Lloyd Jiperson Diaz\Source\Repos\RikaDatas\RikaDatas\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Drawing.Common.dll
 C:\Users\Lloyd Jiperson Diaz\Source\Repos\RikaDatas\RikaDatas\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Lloyd Jiperson Diaz\Source\Repos\RikaDatas\RikaDatas\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
+C:\Users\Owner\Source\Repos\TestRika\RikaDatas\obj\Debug\net8.0\RikaDatas.csproj.AssemblyReference.cache
+C:\Users\Owner\Source\Repos\TestRika\RikaDatas\obj\Debug\net8.0\RikaDatas.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Owner\Source\Repos\TestRika\RikaDatas\obj\Debug\net8.0\RikaDatas.AssemblyInfoInputs.cache
+C:\Users\Owner\Source\Repos\TestRika\RikaDatas\obj\Debug\net8.0\RikaDatas.AssemblyInfo.cs
+C:\Users\Owner\Source\Repos\TestRika\RikaDatas\obj\Debug\net8.0\RikaDatas.csproj.CoreCompileInputs.cache
+C:\Users\Owner\Source\Repos\TestRika\RikaDatas\obj\Debug\net8.0\RikaDatas.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Owner\Source\Repos\TestRika\RikaDatas\obj\Debug\net8.0\RikaDatas.RazorAssemblyInfo.cache
+C:\Users\Owner\Source\Repos\TestRika\RikaDatas\obj\Debug\net8.0\RikaDatas.RazorAssemblyInfo.cs
+C:\Users\Owner\Source\Repos\TestRika\RikaDatas\obj\Debug\net8.0\RikaDatas.sourcelink.json
 C:\Users\Owner\Source\Repos\TestRika\RikaDatas\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\Owner\Source\Repos\TestRika\RikaDatas\bin\Debug\net8.0\appsettings.json
 C:\Users\Owner\Source\Repos\TestRika\RikaDatas\bin\Debug\net8.0\RikaDatas.staticwebassets.runtime.json
@@ -426,15 +435,6 @@ C:\Users\Owner\Source\Repos\TestRika\RikaDatas\bin\Debug\net8.0\tr\Microsoft.Cod
 C:\Users\Owner\Source\Repos\TestRika\RikaDatas\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Owner\Source\Repos\TestRika\RikaDatas\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Owner\Source\Repos\TestRika\RikaDatas\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
-C:\Users\Owner\Source\Repos\TestRika\RikaDatas\obj\Debug\net8.0\RikaDatas.csproj.AssemblyReference.cache
-C:\Users\Owner\Source\Repos\TestRika\RikaDatas\obj\Debug\net8.0\RikaDatas.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Owner\Source\Repos\TestRika\RikaDatas\obj\Debug\net8.0\RikaDatas.AssemblyInfoInputs.cache
-C:\Users\Owner\Source\Repos\TestRika\RikaDatas\obj\Debug\net8.0\RikaDatas.AssemblyInfo.cs
-C:\Users\Owner\Source\Repos\TestRika\RikaDatas\obj\Debug\net8.0\RikaDatas.csproj.CoreCompileInputs.cache
-C:\Users\Owner\Source\Repos\TestRika\RikaDatas\obj\Debug\net8.0\RikaDatas.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\Owner\Source\Repos\TestRika\RikaDatas\obj\Debug\net8.0\RikaDatas.RazorAssemblyInfo.cache
-C:\Users\Owner\Source\Repos\TestRika\RikaDatas\obj\Debug\net8.0\RikaDatas.RazorAssemblyInfo.cs
-C:\Users\Owner\Source\Repos\TestRika\RikaDatas\obj\Debug\net8.0\RikaDatas.sourcelink.json
 C:\Users\Owner\Source\Repos\TestRika\RikaDatas\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\Owner\Source\Repos\TestRika\RikaDatas\obj\Debug\net8.0\scopedcss\bundle\RikaDatas.styles.css
 C:\Users\Owner\Source\Repos\TestRika\RikaDatas\obj\Debug\net8.0\scopedcss\projectbundle\RikaDatas.bundle.scp.css
