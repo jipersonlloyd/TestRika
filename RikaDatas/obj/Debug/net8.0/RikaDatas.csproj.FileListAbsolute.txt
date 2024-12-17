@@ -447,7 +447,6 @@ C:\Users\Owner\Source\Repos\TestRika\RikaDatas\obj\Debug\net8.0\staticwebassets\
 C:\Users\Owner\Source\Repos\TestRika\RikaDatas\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.RikaDatas.props
 C:\Users\Owner\Source\Repos\TestRika\RikaDatas\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.RikaDatas.props
 C:\Users\Owner\Source\Repos\TestRika\RikaDatas\obj\Debug\net8.0\staticwebassets.pack.json
-C:\Users\Owner\Source\Repos\TestRika\RikaDatas\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\Owner\Source\Repos\TestRika\RikaDatas\obj\Debug\net8.0\RikaDatas.csproj.Up2Date
 C:\Users\Owner\Source\Repos\TestRika\RikaDatas\obj\Debug\net8.0\RikaDatas.dll
 C:\Users\Owner\Source\Repos\TestRika\RikaDatas\obj\Debug\net8.0\refint\RikaDatas.dll

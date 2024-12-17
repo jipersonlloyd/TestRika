@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mkLS6MEm77M=",
+  "dgSpecHash": "+rAzUuVTj3Y=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Owner\\source\\repos\\TestRika\\RikaDatas\\RikaDatas.csproj",
+  "projectFilePath": "c:\\Users\\Owner\\source\\repos\\TestRika\\RikaDatas\\RikaDatas.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Owner\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\Owner\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
