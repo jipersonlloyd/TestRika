@@ -1,0 +1,24 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    var textValue = ViewBag.TextValue as string ?? string.Empty;
+}
+
+
+@if (ViewBag.Message != null)
+{
+    if (ViewBag.Message.Contains("Error"))
+    {
+        <p style="color: red;">@ViewBag.Message</p>
+    }
+    else
+    {
+        <p style="color: green;">@ViewBag.Message</p>
+    }
+}
+<form asp-action="Index" method="post">
+    <label for="text">Input URL:</label>
+    <input type="text" id="text" name="text" value="@textValue" />
+    <button type="submit">Submit</button>
+</form>
