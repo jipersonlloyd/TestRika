@@ -29,7 +29,7 @@ namespace RikaDatas.Models
 
         public static List<RikaInventory> Inventories()
         {
-            string filePath = "C:\\Users\\Owner\\Documents\\ADMIN-RIDS\\rikainvtagoloan01to10.json";
+            string filePath = "C:\\Users\\Owner\\Documents\\ADMIN-RIDS\\rikainvuptown01to10.json";
             string jsonContent = System.IO.File.ReadAllText(filePath);
             List<RikaInventory> inventories = JsonConvert.DeserializeObject<List<RikaInventory>>(jsonContent);
 
@@ -48,7 +48,7 @@ namespace RikaDatas.Models
 
         public static List<RikaSales> Sales()
         {
-            string filePath = "C:\\Users\\Owner\\Documents\\ADMIN-RIDS\\rikasalestagoloan01to10.json";
+            string filePath = "C:\\Users\\Owner\\Documents\\ADMIN-RIDS\\rikasalesuptown01to10.json";
             string jsonContent = System.IO.File.ReadAllText(filePath);
             List<RikaSales> sales = JsonConvert.DeserializeObject<List<RikaSales>>(jsonContent);
 
@@ -96,12 +96,15 @@ namespace RikaDatas.Models
             List<RikaSales> distincted = newSales.DistinctBy(x => x.fproductid).ToList();
             string filePath = "C:\\Users\\Owner\\Desktop\\RikaScript\\Script.txt";
             string filePath1 = "C:\\Users\\Owner\\Desktop\\RikaScript\\Script1.txt"; // with new line
+            string products = "C:\\Users\\Owner\\Desktop\\RikaScript\\POS_SALE_PRODUCTS.txt";
             string content = "";
             string content1 = "";
+            string content2 = "";
             for(int i = 0; i < distincted.Count; i++) 
             {
                 content += $"http://strika5.alliancewebpos.net/appserv/app/batch/fix/rebuild_inv_daily_summary.php?fcompanyid=STRIK5-12020182&fsale_date={distincted[i].fsale_date}&fend_date={distincted[i].fsale_date}&fpassword=5678efgh&fsiteid={distincted[i].fsiteid}&fproductid={distincted[i].fproductid},";
                 content1 += $"http://strika5.alliancewebpos.net/appserv/app/batch/fix/rebuild_inv_daily_summary.php?fcompanyid=STRIK5-12020182&fsale_date={distincted[i].fsale_date}&fend_date={distincted[i].fsale_date}&fpassword=5678efgh&fsiteid={distincted[i].fsiteid}&fproductid={distincted[i].fproductid},\n";
+                content2 += $"{distincted[i].fproductid},\n";
             }
 
             System.IO.File.WriteAllText(filePath, content);

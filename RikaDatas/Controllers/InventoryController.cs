@@ -35,6 +35,5 @@ namespace RikaDatas.Controllers
             
             return View();
         }
-
     }
 }

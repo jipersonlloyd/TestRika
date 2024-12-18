@@ -9,5 +9,11 @@
         public string? fproductid { get; set; }
         public double total_qty { get; set; }
 
+        public string? fdoctype { get; set; }
+        public string? frecno { get; set; }
+        
+        public string? fpubid { get; set; }
+
+        
     }
 }
