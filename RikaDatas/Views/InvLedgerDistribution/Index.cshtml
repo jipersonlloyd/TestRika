@@ -1,0 +1,71 @@
+﻿@model IEnumerable<InvLedgerDistribution>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.fdistid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fdst_ledgerid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.finv_date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fqty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fcompanyid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fproductid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fsiteid)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.fdistid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fdst_ledgerid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.finv_date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fqty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fcompanyid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fproductid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fsiteid)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

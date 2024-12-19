@@ -13,22 +13,25 @@
     <thead>
         <tr>
             <th>
+                fdistid
+            </th>
+            <th>
+                fdst_ledgerid
+            </th>
+            <th>
+                finv_date
+            </th>
+            <th>
+                fqty
+            </th>
+            <th>
                 fcompanyid
-            </th>
-            <th>
-                ftermid
-            </th>
-            <th>
-                fsiteid
-            </th>
-            <th>
-                fsale_date
             </th>
             <th>
                 fproductid
             </th>
             <th>
-                total_qty
+                fsiteid
             </th>
             <th></th>
         </tr>
@@ -37,23 +40,26 @@
 @foreach (var item in Model.Items) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.fcompanyid)
+                    @Html.DisplayFor(modelItem => item.fdistid)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ftermid)
+                    @Html.DisplayFor(modelItem => item.fdst_ledgerid)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.fsiteid)
+                    @Html.DisplayFor(modelItem => item.finv_date)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.fsale_date)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.fproductid)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.total_qty)
-            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fqty)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fcompanyid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fproductid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fsiteid)
+                </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
                 @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
