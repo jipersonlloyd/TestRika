@@ -29,7 +29,7 @@ namespace RikaDatas.Models
 
         public static PagedList CreateLedgerPagination(int pageIndex, int pageSize)
         {
-            List<InvLedgerDistribution> ledgerDistributions = InvLedgerDistributions();
+            List<InvLedgerDistribution> ledgerDistributions = NewLedger();
             var count = ledgerDistributions.Count;
             var items = ledgerDistributions.Skip((pageIndex - 1) * pageSize).Take(pageSize).ToList();
             return new PagedList(items, count, pageIndex, pageSize);
@@ -60,7 +60,7 @@ namespace RikaDatas.Models
         }
 
 
-        /* public static List<RikaInventory> Inventories()
+        public static List<RikaInventory> Inventories()
         {
             string filePath = "C:\\Users\\Owner\\Documents\\ADMIN-RIDS\\rikainvosmena01to10.json";
             string jsonContent = System.IO.File.ReadAllText(filePath);
@@ -79,7 +79,7 @@ namespace RikaDatas.Models
             return inventories;
         }
 
-        public static List<RikaSales> Sales()
+        /* public static List<RikaSales> Sales()
         {
             string filePath = "C:\\Users\\Owner\\Documents\\ADMIN-RIDS\\rikasalesosmena01to10.json";
             string jsonContent = System.IO.File.ReadAllText(filePath);
@@ -95,56 +95,36 @@ namespace RikaDatas.Models
             });
 
             return sales;
-        }
+        } */
 
-        public static List<RikaSales> NewSales()
+        public static List<InvLedgerDistribution> NewLedger()
         {
-            List<RikaSales> newSales = new List<RikaSales>();
-            List<RikaSales> sales = Sales();
+            List<InvLedgerDistribution> newledgerDistributions = new List<InvLedgerDistribution>();
+            List<InvLedgerDistribution> ledgerDistributions = InvLedgerDistributions();
             List<RikaInventory> inventories = Inventories();
-            Console.WriteLine($"Sales: {sales.Count}");
+            Console.WriteLine($"Sales: {ledgerDistributions.Count}");
             Console.WriteLine($"Inventories: {inventories.Count}");
-            string prodPath = "C:\\Users\\Owner\\Desktop\\RikaScript\\INV_PRODUCTS.txt";
-            string content2 = "";
+            //string prodPath = "C:\\Users\\Owner\\Desktop\\RikaScript\\INV_PRODUCTS.txt";
+            //string content2 = "";
 
 
             for (int i = 0; i < inventories.Count; i++)
             {
-                content2 += $"{inventories[i].fproductid},\n";
-                for (int j = 0; j < sales.Count; j++)
+                //content2 += $"{inventories[i].fproductid},\n";
+                for (int j = 0; j < ledgerDistributions.Count; j++)
                 {
-                    if (newSales.Contains(sales[j]))
-                    {
+                    if(inventories[i].fproductid == ledgerDistributions[j].fproductid && inventories[i].ftrxdate == ledgerDistributions[j].finv_date) {
+                        newledgerDistributions.Add(ledgerDistributions[j]);
+                    }
+                    else{
                         continue;
-                    }
-
-                    if (sales[j].fproductid == inventories[i].fproductid && sales[j].fsale_date == inventories[i].ftrxdate && sales[j].total_qty != inventories[i].fsold_qty)
-                    {
-                        newSales.Add(sales[j]);
-                    }
-                    else
-                    {
-                        continue;
-                    }
+                    } 
+                    
                 }
             }
-            System.IO.File.WriteAllText(prodPath, content2);
-            // List<RikaSales> distincted = newSales.DistinctBy(x => x.fproductid).ToList();
-            string filePath = "C:\\Users\\Owner\\Desktop\\RikaScript\\Script.txt";
-            string filePath1 = "C:\\Users\\Owner\\Desktop\\RikaScript\\Script1.txt"; // with new line
-            string content = "";
-            string content1 = "";
-            
-            for(int i = 0; i < newSales.Count; i++) 
-            {
-                content += $"http://strika5.alliancewebpos.net/appserv/app/batch/fix/rebuild_inv_daily_summary.php?fcompanyid=STRIK5-12020182&fsale_date={newSales[i].fsale_date}&fend_date={newSales[i].fsale_date}&fpassword=5678efgh&fsiteid={newSales[i].fsiteid}&fproductid={newSales[i].fproductid},";
-                content1 += $"http://strika5.alliancewebpos.net/appserv/app/batch/fix/rebuild_inv_daily_summary.php?fcompanyid=STRIK5-12020182&fsale_date={newSales[i].fsale_date}&fend_date={newSales[i].fsale_date}&fpassword=5678efgh&fsiteid={newSales[i].fsiteid}&fproductid={newSales[i].fproductid},\n";
-            }
+            //System.IO.File.WriteAllText(prodPath, content2);
 
-            System.IO.File.WriteAllText(filePath, content);
-            System.IO.File.WriteAllText(filePath1, content1);
-
-            return newSales;
-        } */
+            return newledgerDistributions;
+        } 
     }
 }
