@@ -38,7 +38,7 @@ namespace RikaDatas.Models
         public static List<InvLedgerDistribution> InvLedgerDistributions()
         {
             int count = 0;
-            string filePath = "C:\\Users\\Owner\\Documents\\ADMIN-RIDS\\invledgerdistribution01to1020.json";
+            string filePath = "C:\\Users\\Owner\\Documents\\ADMIN-RIDS\\rikainvalubijid.json";
             string jsonContent = System.IO.File.ReadAllText(filePath);
             List<InvLedgerDistribution> ledgerDistributions = JsonConvert.DeserializeObject<List<InvLedgerDistribution>>(jsonContent);
             List<InvLedgerDistribution> newLedger = new List<InvLedgerDistribution>();
@@ -62,7 +62,7 @@ namespace RikaDatas.Models
 
         public static List<RikaInventory> Inventories()
         {
-            string filePath = "C:\\Users\\Owner\\Documents\\ADMIN-RIDS\\rikainvosmena01to10.json";
+            string filePath = "C:\\Users\\Owner\\Documents\\ADMIN-RIDS\\rikainvalubijid01to1020.json";
             string jsonContent = System.IO.File.ReadAllText(filePath);
             List<RikaInventory> inventories = JsonConvert.DeserializeObject<List<RikaInventory>>(jsonContent);
 
@@ -104,17 +104,22 @@ namespace RikaDatas.Models
             List<RikaInventory> inventories = Inventories();
             Console.WriteLine($"Sales: {ledgerDistributions.Count}");
             Console.WriteLine($"Inventories: {inventories.Count}");
-            //string prodPath = "C:\\Users\\Owner\\Desktop\\RikaScript\\INV_PRODUCTS.txt";
-            //string content2 = "";
+            string prodPath = "C:\\Users\\Owner\\Desktop\\RikaScript\\INV_PRODUCTS.txt";
+            string content2 = "";
+            string filePath = "C:\\Users\\Owner\\Desktop\\RikaScript\\Script.txt";
+            string filePath1 = "C:\\Users\\Owner\\Desktop\\RikaScript\\Script1.txt"; // with new line
+            string content = "";
+            string content1 = "";
 
 
             for (int i = 0; i < inventories.Count; i++)
             {
-                //content2 += $"{inventories[i].fproductid},\n";
                 for (int j = 0; j < ledgerDistributions.Count; j++)
                 {
                     if(inventories[i].fproductid == ledgerDistributions[j].fproductid && inventories[i].ftrxdate == ledgerDistributions[j].finv_date) {
                         newledgerDistributions.Add(ledgerDistributions[j]);
+                        content += $"http://strika5.alliancewebpos.net/appserv/app/batch/fix/rebuild_inv_daily_summary.php?fcompanyid=STRIK5-12020182&fsale_date={ledgerDistributions[i].finv_date}&fend_date={ledgerDistributions[i].finv_date}&fpassword=5678efgh&fsiteid={ledgerDistributions[i].fsiteid}&fproductid={ledgerDistributions[i].fproductid},";
+                        content1 += $"http://strika5.alliancewebpos.net/appserv/app/batch/fix/rebuild_inv_daily_summary.php?fcompanyid=STRIK5-12020182&fsale_date={ledgerDistributions[i].finv_date}&fend_date={ledgerDistributions[i].finv_date}&fpassword=5678efgh&fsiteid={ledgerDistributions[i].fsiteid}&fproductid={ledgerDistributions[i].fproductid},\n";
                     }
                     else{
                         continue;
@@ -122,7 +127,15 @@ namespace RikaDatas.Models
                     
                 }
             }
-            //System.IO.File.WriteAllText(prodPath, content2);
+            System.IO.File.WriteAllText(filePath, content);
+            System.IO.File.WriteAllText(filePath1, content1);
+
+            List<InvLedgerDistribution> distincted = newledgerDistributions.DistinctBy(x => x.fproductid).ToList();
+            for(int i = 0; i < distincted.Count; i++){
+                content2 += $"{distincted[i].fproductid},\n";
+            }
+
+            System.IO.File.WriteAllText(prodPath, content2);
 
             return newledgerDistributions;
         } 
