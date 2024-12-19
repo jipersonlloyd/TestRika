@@ -13,9 +13,10 @@ namespace RikaDatas.Controllers
 
         public IActionResult Index(int page = 1, int pageSize = 10)
         {
-            var pagedData = PagedList.Create(page, pageSize);
+            var pagedData = PagedList.CreateLedgerPagination(page, pageSize);
             return View(pagedData);
         }
+
 
         public async Task<IActionResult> ApplyFix()
         {
