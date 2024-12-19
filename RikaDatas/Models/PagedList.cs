@@ -102,7 +102,7 @@ namespace RikaDatas.Models
             List<InvLedgerDistribution> newledgerDistributions = new List<InvLedgerDistribution>();
             List<InvLedgerDistribution> ledgerDistributions = InvLedgerDistributions();
             List<RikaInventory> inventories = Inventories();
-            Console.WriteLine($"Sales: {ledgerDistributions.Count}");
+            Console.WriteLine($"LedgerCount: {ledgerDistributions.Count}");
             Console.WriteLine($"Inventories: {inventories.Count}");
             string prodPath = "C:\\Users\\Owner\\Desktop\\RikaScript\\INV_PRODUCTS.txt";
             string content2 = "";
