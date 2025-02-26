@@ -1,9 +1,11 @@
-public class InvLedgerDistribution {
+public class InvLedgerDistribution
+{
     public int fdistid { get; set; }
     public int fdst_ledgerid { get; set; }
 
     public string? finv_date { get; set; }
 
+    public string? fend_date { get; set; }
     public double fqty { get; set; }
 
     public string? fcompanyid { get; set; }
