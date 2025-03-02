@@ -142,27 +142,27 @@ namespace RikaDatas.Models
                 dateList.Add(dateDict);
             }
 
-            //UPTOWN 2019
-           /*  string[] products = [
-                "2014046", //done
-                "10008504", //done
-                "10001715F", //done
-                "10007633", //done
-                "2014020028", //done
-                "10004867", //done
-                "10001650", //done
-                "10007219", //done
-                "12018663", //done
-                "1008970", //done
-                "1008941", //no issue done
-                "1009232", // done
-                "10004867", // done
-                "10001650", // done
-                 "10007219", // done
-            ]; */
+            //UPTOWN 2019 - DONE v1
+            /*  string[] products = [
+                 "2014046", //done
+                 "10008504", //done
+                 "10001715F", //done
+                 "10007633", //done
+                 "2014020028", //done
+                 "10004867", //done
+                 "10001650", //done
+                 "10007219", //done
+                 "12018663", //done
+                 "1008970", //done
+                 "1008941", //no issue done
+                 "1009232", // done
+                 "10004867", // done
+                 "10001650", // done
+                  "10007219", // done
+             ]; */
 
-            //OSMENA 2019 - DONE ALL
-            string[] products = [
+            //OSMENA 2019 - DONE ALL v1
+            /* string[] products = [
                 "1012368",
                 "100201846",
                 "1013261",
@@ -174,7 +174,37 @@ namespace RikaDatas.Models
                 "1003350F",
                 "1003350",
                 "1201987",
+            ]; */
+
+            //OSMENA 2019 - v2
+            string[] products = [
+                "1007410",
+                "1005876",
+                "1012640",
+                "1202130",
+                "1014417",
+                "1006588",
+                "156132-S30"
             ];
+
+            //UPTOWN 2019 - v2
+            /* string[] products - [
+                "10008504",
+                "201402-09",
+                "1201865",
+                "10003717",
+                "10006744",
+                "10003017",
+                "10008136",
+                "2014020028",
+                "1202453",
+                "10001178",
+                "10001187",
+                "10002655",
+                "10004939",
+                "12018663",
+                "10003658"
+            ]; */
 
 
             //ALUBIJID2019
@@ -283,8 +313,8 @@ namespace RikaDatas.Models
                     invLedger.fend_date = dateList[j]["fend_date"];
                     newledgerDistributions.Add(invLedger);
 
-                    content += $"https://rika.alliancewebpos.com/appserv/app/batch/fix/rebuild_inv_daily_summary.php?fcompanyid=RIKA-12020182&fsale_date={invLedger.finv_date}&fend_date={invLedger.fend_date}&fpassword=5678efgh&fsiteid=OSMENA2019&fproductid={invLedger.fproductid},";
-                    content1 += $"https://rika.alliancewebpos.com/appserv/app/batch/fix/rebuild_inv_daily_summary.php?fcompanyid=RIKA-12020182&fsale_date={invLedger.finv_date}&fend_date={invLedger.fend_date}&fpassword=5678efgh&fsiteid=OSMENA2019&fproductid={invLedger.fproductid},\n";
+                    content += $"http://strika5.alliancewebpos.net/appserv/app/batch/fix/rebuild_inv_daily_summary.php?fcompanyid=STRIK5-12020182&fsale_date={invLedger.finv_date}&fend_date={invLedger.fend_date}&fpassword=5678efgh&fsiteid=OSMENA2019&fproductid={invLedger.fproductid},";
+                    content1 += $"http://strika5.alliancewebpos.net/appserv/app/batch/fix/rebuild_inv_daily_summary.php?fcompanyid=STRIK5-12020182&fsale_date={invLedger.finv_date}&fend_date={invLedger.fend_date}&fpassword=5678efgh&fsiteid=OSMENA2019&fproductid={invLedger.fproductid},\n";
                 }
             }
 
