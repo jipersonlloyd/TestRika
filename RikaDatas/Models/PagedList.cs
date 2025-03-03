@@ -176,19 +176,19 @@ namespace RikaDatas.Models
                 "1201987",
             ]; */
 
-            //OSMENA 2019 - v2
-            string[] products = [
-                "1007410",
-                "1005876",
+            //OSMENA 2019 - v2 - DONE
+            /* string[] products = [
+                "1007410", 
+                "1005876", 
                 "1012640",
                 "1202130",
                 "1014417",
                 "1006588",
                 "156132-S30"
-            ];
+            ]; */
 
             //UPTOWN 2019 - v2
-            /* string[] products - [
+            string[] products = [
                 "10008504",
                 "201402-09",
                 "1201865",
@@ -204,7 +204,7 @@ namespace RikaDatas.Models
                 "10004939",
                 "12018663",
                 "10003658"
-            ]; */
+            ];
 
 
             //ALUBIJID2019
@@ -313,8 +313,8 @@ namespace RikaDatas.Models
                     invLedger.fend_date = dateList[j]["fend_date"];
                     newledgerDistributions.Add(invLedger);
 
-                    content += $"http://strika5.alliancewebpos.net/appserv/app/batch/fix/rebuild_inv_daily_summary.php?fcompanyid=STRIK5-12020182&fsale_date={invLedger.finv_date}&fend_date={invLedger.fend_date}&fpassword=5678efgh&fsiteid=OSMENA2019&fproductid={invLedger.fproductid},";
-                    content1 += $"http://strika5.alliancewebpos.net/appserv/app/batch/fix/rebuild_inv_daily_summary.php?fcompanyid=STRIK5-12020182&fsale_date={invLedger.finv_date}&fend_date={invLedger.fend_date}&fpassword=5678efgh&fsiteid=OSMENA2019&fproductid={invLedger.fproductid},\n";
+                    content += $"http://strika5.alliancewebpos.net/appserv/app/batch/fix/rebuild_inv_daily_summary.php?fcompanyid=RIKA5-12020182&fsale_date={invLedger.finv_date}&fend_date={invLedger.fend_date}&fpassword=5678efgh&fsiteid=OSMENA2019&fproductid={invLedger.fproductid},";
+                    content1 += $"http://strika5.alliancewebpos.net/appserv/app/batch/fix/rebuild_inv_daily_summary.php?fcompanyid=RIKA5-12020182&fsale_date={invLedger.finv_date}&fend_date={invLedger.fend_date}&fpassword=5678efgh&fsiteid=OSMENA2019&fproductid={invLedger.fproductid},\n";
                 }
             }
 
