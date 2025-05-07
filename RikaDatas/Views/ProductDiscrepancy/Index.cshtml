@@ -1,0 +1,45 @@
+﻿@model IEnumerable<RikaDatas.Models.ProductDiscrepancyModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Productid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Inv_Ledger)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Inv_Daily_Sum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsMatch)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Productid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Inv_Ledger)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Inv_Daily_Sum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsMatch)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
