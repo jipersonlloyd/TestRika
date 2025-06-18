@@ -1,0 +1,95 @@
+﻿@model IEnumerable<RikaDatas.Models.InvDailySummary>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.fcompanyid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fproductid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fsiteid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.flotno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ftrxdate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fqty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fadjusted_qty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fadjusted_amount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fsold_qty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fsold_amount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fsold_cost)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.fcompanyid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fproductid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fsiteid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.flotno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ftrxdate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fqty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fadjusted_qty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fadjusted_amount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fsold_qty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fsold_amount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fsold_cost)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
