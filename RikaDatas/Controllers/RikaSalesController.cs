@@ -33,37 +33,39 @@ namespace RikaDatas.Controllers
                     }
                 
                     string apiUrl = links[i];
+                    Console.WriteLine($"Checking current index {i + 1} out of {links.Count}");
                     Console.WriteLine($"Executing: {links[i]}");
                     using (var httpClient = new HttpClient())
+                {
+                    var response = await httpClient.GetAsync(apiUrl);
+                    var jsonResponse = await response.Content.ReadAsStringAsync();
+
+                    if (response.IsSuccessStatusCode && jsonResponse.Contains("Proceeded"))
                     {
-                        var response = await httpClient.GetAsync(apiUrl);
-                        var jsonResponse = await response.Content.ReadAsStringAsync();
-
-                        if (response.IsSuccessStatusCode && jsonResponse.Contains("Proceeded"))
-                        {
-                            Console.WriteLine("Execution Finished...");
-                            continue;
-                        }
-                        else
-                        {
-                            string path = "C:\\Users\\Owner\\Desktop\\RikaScript\\ErrorLinks.txt";
-                            string path1 = "C:\\Users\\Owner\\Desktop\\RikaScript\\ErrorLinks1.txt";
-                            using (var writer = new StreamWriter(path, append: true))
-                            {
-                                string content = $"{apiUrl},";
-                                writer.WriteLine(content);
-                                writer.Flush(); // Ensure data is immediately written to the file
-                            }
-
-                            using (var writer = new StreamWriter(path1, append: true))
-                            {
-                                string content = $"{apiUrl},\n";
-                                writer.WriteLine(content);
-                                writer.Flush(); // Ensure data is immediately written to the file
-                            }
-                            continue;
-                        }
+                        Console.WriteLine("Execution Finished...");
+                        Console.WriteLine("----------------------------------------------");
+                        continue;
                     }
+                    else
+                    {
+                        string path = "C:\\Users\\Owner\\Desktop\\RikaScript\\ErrorLinks.txt";
+                        string path1 = "C:\\Users\\Owner\\Desktop\\RikaScript\\ErrorLinks1.txt";
+                        using (var writer = new StreamWriter(path, append: true))
+                        {
+                            string content = $"{apiUrl},";
+                            writer.WriteLine(content);
+                            writer.Flush(); // Ensure data is immediately written to the file
+                        }
+
+                        using (var writer = new StreamWriter(path1, append: true))
+                        {
+                            string content = $"{apiUrl},\n";
+                            writer.WriteLine(content);
+                            writer.Flush(); // Ensure data is immediately written to the file
+                        }
+                        continue;
+                    }
+                }
                 }
             
             return View();

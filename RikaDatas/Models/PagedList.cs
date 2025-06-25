@@ -129,9 +129,40 @@ namespace RikaDatas.Models
             "07", "08", "09", "10", "11", "12"
             ];
 
-            string[] products = [
-                "10006744"
+           List<string> products = [
+                "10004003",
+"700145",
+"174899",
+"10005815",
+"120247",
+"102018112",
+"1003727",
+"1013687",
+"700144",
+
             ];
+
+            // string[] products = [
+            //    "10003710",
+            //     "10003712",
+            //     "10004605",
+            //     "10002210",
+            //     "1007449",
+            //     "10005156",
+            //     "ALU0000012382",
+            //     "ALU00000128739182",
+            //     "12018191",
+            //     "10003176",
+            //     "ALU00001238964",
+            //     "10003173",
+            //     "10003585",
+            //     "ALU00005856",
+            //     "10005123",
+            //     "1202438",
+            //     "R006",
+            //     "ALU000012847A",
+            //     "12024161",
+            // ];
 
 
             for (int i = 0; i < months.Count; i++)
@@ -157,7 +188,7 @@ namespace RikaDatas.Models
             string content1 = "";
 
             List<InvLedgerDistribution> newledgerDistributions = new List<InvLedgerDistribution>();
-            for (int i = 0; i < products.Length; i++)
+            for (int i = 0; i < products.Count; i++)
             {
                 for (int j = 0; j < dateList.Count; j++)
                 {
@@ -171,8 +202,8 @@ namespace RikaDatas.Models
                     invLedger.fend_date = dateList[j]["fend_date"];
                     newledgerDistributions.Add(invLedger);
 
-                    content += $"https://rika.alliancewebpos.com/appserv/app/batch/fix/rebuild_inv_daily_summary.php?fcompanyid=RIKA5-12020182&fsale_date={invLedger.finv_date}&fend_date={invLedger.fend_date}&fpassword=5678efgh&fsiteid=AGORA2019&fproductid={invLedger.fproductid},";
-                    content1 += $"https://rika.alliancewebpos.com/appserv/app/batch/fix/rebuild_inv_daily_summary.php?fcompanyid=RIKA5-12020182&fsale_date={invLedger.finv_date}&fend_date={invLedger.fend_date}&fpassword=5678efgh&fsiteid=AGORA2019&fproductid={invLedger.fproductid},\n";
+                    content += $"http://rika-replica.alliancewebpos.net/appserv/app/batch/fix/rebuild_inv_daily_summary.php?fcompanyid=RIKA5-12020182&fsale_date={invLedger.finv_date}&fend_date={invLedger.fend_date}&fpassword=5678efgh&fsiteid=AGORA2019&fproductid={invLedger.fproductid},";
+                    content1 += $"http://rika-replica.alliancewebpos.net/appserv/app/batch/fix/rebuild_inv_daily_summary.php?fcompanyid=RIKA5-12020182&fsale_date={invLedger.finv_date}&fend_date={invLedger.fend_date}&fpassword=5678efgh&fsiteid=AGORA2019&fproductid={invLedger.fproductid},\n";
                 }
             }
 
