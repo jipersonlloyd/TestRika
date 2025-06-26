@@ -27,93 +27,77 @@ namespace RikaDatas.Controllers
             // "1012371",
             //             ];    
 
-            var path = "C:\\Users\\Owner\\Desktop\\C# TestRika\\RikaDatas\\Controllers\\agoraproducts.json";
+            var path = "C:\\Users\\Owner\\Desktop\\C# TestRika\\RikaDatas\\Controllers\\jrborjaproducts.json";
             var jsonString = System.IO.File.ReadAllText(path);
             var products = JsonSerializer.Deserialize<List<Product>>(jsonString);
 
             HttpClient httpClient = new HttpClient();
+
             httpClient.Timeout = TimeSpan.FromMinutes(100);
 
-            int maxConcurrency = 10;
-            var throttler = new SemaphoreSlim(maxConcurrency);
+            var throttler = new SemaphoreSlim(10); // maxConcurrency
+var tasks = new List<Task<ProductDiscrepancyModel>>();
 
-            var tasks = products.Select(async product =>
-                {
-                    await throttler.WaitAsync();
-                    try
-                    {
-                        string apiUrl = $"http://rika-replica.alliancewebpos.net/appserv/app/batch/CTest.php?fproductid={product.fproductid}";
-                        var response = await _httpClient.GetAsync(apiUrl);
-                        var jsonResponse = await response.Content.ReadAsStringAsync();
-                        Console.WriteLine(jsonResponse);
-                        var data = JsonSerializer.Deserialize<ProductDiscrepancyModel>(jsonResponse);
+foreach (var product in products)
+{
+    tasks.Add(Task.Run(async ()  =>
+    {
+        await throttler.WaitAsync();
+        try
+        {
+            string productId = product.fproductid;
+            string apiUrl = $"http://rika-replica.alliancewebpos.net/appserv/app/batch/CTest.php?fproductid={product.fproductid}";
+            
+            var response = await _httpClient.GetAsync(apiUrl);
+            var jsonResponse = await response.Content.ReadAsStringAsync();
 
-                        return data;
-                    }
-                    finally
-                    {
-                        throttler.Release();
-                    }
-                });
+            Console.WriteLine($"[{productId}] Response: {jsonResponse}");
 
-                var results = await Task.WhenAll(tasks);
+            if (!response.IsSuccessStatusCode || string.IsNullOrWhiteSpace(jsonResponse))
+            {
+                Console.WriteLine($"[{productId}] Invalid or empty response.");
+                return null;
+            }
+
+            try
+            {
+                return JsonSerializer.Deserialize<ProductDiscrepancyModel>(jsonResponse);
+            }
+            catch (JsonException ex)
+            {
+                Console.WriteLine($"[{productId}] JSON error: {ex.Message}");
+                return null;
+            }
+        }
+        finally
+        {
+            throttler.Release();
+        }
+    }));
+}
+
+var results = await Task.WhenAll(tasks);
 
                 var productlist = results.Where(r => r != null).ToList();
                 var discrepancies = productlist.Where(p => p.HasDiscrepancy == "yes").ToList();
 
-            // for (int i = 0; i < products.Count; i++)
-            // {
-
-            //     Console.WriteLine($"Checking current index {i + 1} out of {products.Count}");
-            //     string apiUrl = $"http://rika-replica.alliancewebpos.net/appserv/app/batch/CTest.php?fproductid={products[i].fproductid}";
-            //     // string apiUrl = $"http://jacob:8888/appserv/app/batch/CTest.php?fproductid={products[i]}";
-            //     using (var httpClient = new HttpClient())
-            //     {
-            //         httpClient.Timeout = TimeSpan.FromMinutes(100);
-
-            //         var response = await httpClient.GetAsync(apiUrl);
-            //         var jsonResponse = await response.Content.ReadAsStringAsync();
-            //         Console.WriteLine(jsonResponse);
-            //         var data = JsonSerializer.Deserialize<ProductDiscrepancyModel>(jsonResponse);
-
-            //         if (response.IsSuccessStatusCode)
-            //         {
-            //             ProductDiscrepancyModel prod = new ProductDiscrepancyModel
-            //             {
-            //                 Productid = data?.Productid,
-            //                 Inv_Ledger = data?.Inv_Ledger,
-            //                 Inv_Daily_Sum = data?.Inv_Daily_Sum,
-            //                 HasDiscrepancy = data?.HasDiscrepancy
-            //             };
-            //             productlist.Add(prod);
-
-            //             if (data?.HasDiscrepancy == "yes")
-            //             {
-            //                 discrepancies.Add(prod);
-            //             }
-            //         }
-            //     }
-
-
-            // }
-
             for (int i = 0; i < productlist.Count; i++)
             {
                 Console.WriteLine($"Writing Products in Excel {i + 1} out of {productlist.Count}");
-                createExcelFile(workbook, i + 2, productlist[i].Productid, productlist[i].HasDiscrepancy, productlist.Count, "AgoraProducts");
+                createExcelFile(workbook, i + 2, productlist[i].Productid, productlist[i].HasDiscrepancy, productlist.Count, "JrBorjaProducts");
                 if (i + 1 == productlist.Count)
                 {
-                    workbook.SaveAs($"C:\\Users\\Owner\\Desktop\\RikaScript\\AgoraProducts.xlsx");
+                    workbook.SaveAs($"C:\\Users\\Owner\\Desktop\\RikaScript\\JrBorjaProducts.xlsx");
                 }
             }
 
             for (int i = 0; i < discrepancies.Count; i++)
             {
                 Console.WriteLine($"Writing Discrepancy in Excel {i + 1} out of {discrepancies.Count}");
-                createAnotherExcelFile(disworkbook, i + 2, discrepancies[i].Productid, discrepancies[i].HasDiscrepancy, discrepancies.Count, "AgoraDiscrepancies");
+                createAnotherExcelFile(disworkbook, i + 2, discrepancies[i].Productid, discrepancies[i].HasDiscrepancy, discrepancies.Count, "JrBorjaDiscrepancies");
                 if (i + 1 == discrepancies.Count)
                 {
-                    disworkbook.SaveAs($"C:\\Users\\Owner\\Desktop\\RikaScript\\AgoraDiscrepancies.xlsx");
+                    disworkbook.SaveAs($"C:\\Users\\Owner\\Desktop\\RikaScript\\JrBorjaDiscrepancies.xlsx");
                 }
             }
 
